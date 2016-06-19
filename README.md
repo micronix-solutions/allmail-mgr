@@ -1,0 +1,2 @@
+# allmail-mgr
+AllMail Manager
