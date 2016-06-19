@@ -1,0 +1,11 @@
+<div class="panel panel-primary domain-menu-panel">
+  <div class="panel-heading">
+    <span class="h2 panel-title">DOMAIN LIST</span>
+    <a class="btn btn-default btn-xs pull-right" ng-click="newDomain()"><span class="glyphicon glyphicon-plus"></span>&nbsp;new domain</a>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="domain in domains" ui-sref-active="active">
+      <a ui-sref="app.domains.domain.mailboxes({domainName: domain.domain_name})">{{domain.domain_name}}</a>
+    </li>
+  </ul>
+</div>

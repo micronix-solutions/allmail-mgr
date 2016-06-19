@@ -1,0 +1,16 @@
+<div class="panel panel-default domain-detail-panel">
+  <div class="panel-heading">
+    <span class="h3 panel-title">MANAGE DOMAIN {{domain_name | uppercase}}</span>
+    <a class="btn btn-danger btn-xs pull-right" ui-sref=".delete({domainName: domain_name})"><span class="glyphicon glyphicon-trash"></span>&nbsp;delete domain</a>
+  </div>
+  <div class="panel-body">
+    <a class="btn btn-default pull-right" ui-sref="app.domains.domain.aliases.new-alias({domainName: domain_name})"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-random"></span>&nbsp;&nbsp;new alias</a>
+    <a class="btn btn-default pull-right" ui-sref="app.domains.domain.mailboxes.new-mailbox({domainName: domain_name})"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;new mailbox</a>
+    <ul class="nav nav-tabs">
+      <li ui-sref-active="active"><a ui-sref="app.domains.domain.mailboxes({domainName: domain_name})"></span><span class="glyphicon glyphicon-envelope"><span></span>&nbsp;Mailboxes</a></li>
+      <li ui-sref-active="active"><a ui-sref="app.domains.domain.aliases({domainName: domain_name})"><span class="glyphicon glyphicon-random"></span>&nbsp;Aliases</a></li>
+    </ul>
+    <!--########## UI views injected here ##########-->
+    <div ui-view="domain-item"></div>
+  </div>
+</div>

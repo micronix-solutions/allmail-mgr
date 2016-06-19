@@ -1,0 +1,52 @@
+<form class="form-inline" ng-submit="add(_mailboxname, _password, _quota, _domainAdmin, _globalAdmin, _active)">
+  <div class="panel panel-success edit-panel">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        CREATE NEW MAILBOX ON {{theDomain | uppercase}}
+      </h4>
+    </div>
+    <div class="panel-body edit-form">
+      <div class="edit-form-row">
+        <span class="editform-control">
+          <label>Mailbox name</label>
+          <div class="input-group">
+            <input type="text" class="form-control" ng-model="_mailboxname">
+            <div class="input-group-addon">@{{theDomain}}</div>
+          </div>
+        </span>
+        <span class="editform-control">
+          <label>Password</label>
+          <input type="password" class="form-control" ng-model="_password">
+        </span>
+        <span class="editform-control">
+          <label>Quota</label>
+          <div class="input-group">
+            <input type="number" class="form-control" ng-model="_quota">
+            <div class="input-group-addon">GB</div>
+          </div>
+        </span>
+      </div>
+      <div class="edit-form-row">
+        <span class="editform-control">
+          <label>
+            <input type="checkbox" class="form-control" ng-model="_domainAdmin" ng-init="_domainAdmin=false">Domain Admin
+          </label>
+        </span>
+        <span class="editform-control">
+          <label>
+            <input type="checkbox" class="form-control" ng-model="_globalAdmin" ng-init="_globalAdmin=false">Global Admin
+          </label>
+        </span>
+        <span class="editform-control">
+          <label>
+            <input type="checkbox" class="form-control" ng-model="_active" ng-init="active=true">Active
+          </label>
+        </span>
+      </div>
+  </div>
+  <div class="panel-footer">
+    <button class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Submit</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-ban-circle"></span>Cancel</button>
+  </div>
+</div>
+</form>

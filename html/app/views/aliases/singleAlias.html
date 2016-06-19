@@ -1,0 +1,38 @@
+<form class="form-inline" ng-submit="save()">
+  <div class="panel panel-success edit-panel">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        MANAGE ALIAS ON {{theDomain | uppercase}}
+      </h4>
+    </div>
+    <div class="panel-body edit-form">
+      <div class="edit-form-row">
+        <span class="editform-control">
+          <label>Alias name</label>
+          <div class="input-group">
+            <input type="text" class="form-control" ng-model="alias.alias" disabled>
+            <div class="input-group-addon">@{{theDomain}}</div>
+          </div>
+        </span>
+      </div>
+      <div class="edit-form-row">
+        <span class="editform-control">
+          <label>Targets</label>
+          <input type="textarea" class="form-control" rows="4" cols="50" ng-model="alias.targets">
+        </span>
+      </div>
+      <div class="edit-form-row">
+        <span class="editform-control">
+          <label>
+            <input type="checkbox" class="form-control" ng-model="alias.active">Active
+          </label>
+        </span>
+      </div>
+  </div>
+  <div class="panel-footer">
+    <button class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Submit</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-ban-circle"></span>&nbsp;Cancel</button>
+    <a class="btn btn-danger pull-right" ui-sref=".delete({domainName: theDomain, aliasName:alias.alias})"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a>
+  </div>
+</div>
+</form>

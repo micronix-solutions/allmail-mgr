@@ -1,0 +1,53 @@
+<form class="form-inline" ng-submit="save()">
+  <div class="panel panel-success edit-panel">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        MANAGE MAILBOX ON {{theDomain | uppercase}}
+      </h4>
+    </div>
+    <div class="panel-body edit-form">
+      <div class="edit-form-row">
+        <span class="editform-control">
+          <label>Mailbox name</label>
+          <div class="input-group">
+            <input type="text" class="form-control" ng-model="mailbox.mailbox" disabled>
+            <div class="input-group-addon">@{{theDomain}}</div>
+          </div>
+        </span>
+        <span class="editform-control">
+          <label>Password</label>
+          <a class="btn btn-default" ui-sref="app.domains.domain.mailboxes.mailbox.setpassword({domainName: theDomain, mailboxName:mailbox.mailbox})">reset password</a>
+        </span>
+        <span class="editform-control">
+          <label>Quota</label>
+          <div class="input-group">
+            <input type="number" class="form-control" ng-model="mailbox.quota_gb">
+            <div class="input-group-addon">GB</div>
+          </div>
+        </span>
+      </div>
+      <div class="edit-form-row">
+        <span class="editform-control">
+          <label>
+            <input type="checkbox" class="form-control" ng-model="mailbox.is_domain_admin">Domain Admin
+          </label>
+        </span>
+        <span class="editform-control">
+          <label>
+            <input type="checkbox" class="form-control" ng-model="mailbox.is_global_admin">Global Admin
+          </label>
+        </span>
+        <span class="editform-control">
+          <label>
+            <input type="checkbox" class="form-control" ng-model="mailbox.active">Active
+          </label>
+        </span>
+      </div>
+  </div>
+  <div class="panel-footer">
+    <button class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Submit</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-ban-circle"></span>&nbsp;Cancel</button>
+    <a class="btn btn-danger pull-right" ui-sref=".delete({domainName: theDomain, mailboxName:mailbox.mailbox})"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a>
+  </div>
+</div>
+</form>

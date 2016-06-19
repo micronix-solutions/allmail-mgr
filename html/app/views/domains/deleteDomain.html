@@ -1,0 +1,21 @@
+<form class="form-inline" ng-submit="save()">
+  <div class="panel panel-danger"> <!--edit-panel-->
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        DELETE DOMAIN {{theDomain | uppercase}}
+      </h4>
+    </div>
+    <div class="panel-body edit-form">
+          You're about to delete the domain <b>{{theDomain}}</b> forever.<br />
+          <h3 class="text-center">THIS CANNOT BE UNDONE.</h3>
+          To proceed, please type "delete the domain" below, then hit the red button.
+        <div class="editform-control">
+          <input type=text class="form-control" ng-model="_deleteText">
+        </div>
+  </div>
+  <div class="panel-footer">
+    <button type="button" class="btn btn-danger" ng-click="delete()" ng-disabled = "_deleteText != 'delete the domain'">DO NOT PRESS</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-ban-circle"></span>&nbsp;Cancel</button>
+  </div>
+</div>
+</form>

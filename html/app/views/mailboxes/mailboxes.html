@@ -1,0 +1,44 @@
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-hover">
+        <tr>
+          <th>
+            Mailbox Name
+          </th>
+          <th>
+            Active
+          </th>
+          <th>
+            Quota
+          </th>
+          <th>
+            Domain Admin
+          </th>
+          <th>
+            Global Admin
+          </th>
+          <tr ng-repeat="mailbox in mailboxes" ui-sref-active="active">
+            <td>
+              <a ui-sref="app.domains.domain.mailboxes.mailbox({domainName: theDomain, mailboxName:mailbox.mailbox})">{{mailbox.mailbox}}</a>
+            </td>
+            <td>
+              <span ng-class="{'glyphicon glyphicon-check': mailbox.active}"></span>
+            </td>
+            <td>
+              {{mailbox.quota_gb}} GB
+            </td>
+            <td>
+              <span ng-class="{'glyphicon glyphicon-check': mailbox.is_domain_admin}"></span>
+            </td>
+            <td>
+              <span ng-class="{'glyphicon glyphicon-check': mailbox.is_global_admin}"></span>
+            </td>
+          </tr>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div ui-view="mailbox"></div>
+  </div>

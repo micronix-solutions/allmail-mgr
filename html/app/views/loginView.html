@@ -1,0 +1,12 @@
+<div ng-controller="LoginCtrl" class="form-group">
+  <h3>Please identify yourself</h3>
+  <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+  <form ng-submit="submit(_email, _password)">
+    <label>Email address</label>
+    <input type="email" class="form-control" ng-model="_email" />
+    <label>Password</label>
+    <input type="password" class="form-control" ng-model="_password" />
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<button class="btn btn-default" ng-click="LoginCtrl.cancel()">Cancel</button>

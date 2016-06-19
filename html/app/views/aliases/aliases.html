@@ -1,0 +1,26 @@
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-hover">
+        <tr>
+          <th>
+            Alias Name
+          </th>
+          <th>
+            Active
+          </th>
+          <tr ng-repeat="alias in aliases" ui-sref-active="active">
+            <td>
+              <a ui-sref="app.domains.domain.aliases.alias({domainName: theDomain, aliasName:alias.alias})">{{alias.alias}}</a>
+            </td>
+            <td>
+              <span ng-class="{'glyphicon glyphicon-check': alias.active}"></span>
+            </td>
+          </tr>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div ui-view="mailbox"></div>
+  </div>
